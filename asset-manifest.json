@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/test-seven/static/css/main.2b02a572.css",
+    "main.js": "/test-seven/static/js/main.f8e27e96.js",
+    "static/media/grid.svg": "/test-seven/static/media/grid.b1b38b627feb7bad6af990de1fab6058.svg",
+    "index.html": "/test-seven/index.html",
+    "static/media/columns.svg": "/test-seven/static/media/columns.3b00b744337261074556250b8c85f111.svg",
+    "static/media/trash.svg": "/test-seven/static/media/trash.e9f3bcf1a6b88a8f7043745293783719.svg",
+    "static/media/file.svg": "/test-seven/static/media/file.4df828553dd522bb95e53a18bcf94264.svg",
+    "static/media/reply.svg": "/test-seven/static/media/reply.9f7ca36be7630a709a5baab0c42bec8e.svg",
+    "static/media/chevron-down.svg": "/test-seven/static/media/chevron-down.4ed4b1c59328d88573a706af212ce4d1.svg",
+    "main.2b02a572.css.map": "/test-seven/static/css/main.2b02a572.css.map",
+    "main.f8e27e96.js.map": "/test-seven/static/js/main.f8e27e96.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2b02a572.css",
+    "static/js/main.f8e27e96.js"
+  ]
+}
