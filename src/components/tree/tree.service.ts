@@ -120,29 +120,3 @@
         return node.id !== id;
     })
   )
-
-  export function getDepth(
-    localTree: any[],
-    depth: number = 0
-  ) {
-    depth += localTree.length;
-    for(let node of localTree) {
-      if(node.child.length > 0) {
-        depth += getDepth(node.child, depth);
-      }
-    }
-    console.log(depth);
-    
-    return depth;
-  }
-
-  export function isContinuation(
-    nodes: any[] 
-  ) {
-    for(let node of nodes) {
-      if(node.child.length > 0) {
-        return true;
-      }
-    }
-    return false
-  }

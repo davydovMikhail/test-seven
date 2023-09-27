@@ -5,6 +5,8 @@ import reply from "./img/reply.svg"
 import columns from "./img/columns.svg"
 import s from './App.module.scss';
 import Tablo from './components/tablo/tablo';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   
@@ -74,6 +76,7 @@ function App() {
         <div className={s.tablo + ' ' + s.borderWhite + ' ' + s.backgroundTwo}>
           <Tablo />
         </div>
+        <ToastContainer/>
     </div>
   );
 }

@@ -104,13 +104,13 @@ input::-webkit-inner-spin-button {
     margin-left: 10px;
     position: relative;
     &__continuation {
-        // height: 57px;
+        height: 100%;
         position: absolute;
         overflow: hidden;
         background-color: #fff;
         z-index: 90;
         width: 1px;
-        top: -27px;
+        top: -16px;
         left: 28px
     }
 }

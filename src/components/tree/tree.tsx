@@ -8,6 +8,7 @@ import { useCreate } from "../../hooks/useCreate";
 import { useDelete } from "../../hooks/useDelete";
 import { findNode, editNodeInTree, addNodeInTree, editVirtualNodeInTree, removeNodeInTree } from "./tree.service";
 import clsx from "clsx";
+import { toast } from "react-toastify";
     
 function Tree() {
     const getHook = useGet();
@@ -18,7 +19,6 @@ function Tree() {
 
     const [hover, setHover] = useState(0);
 
-    const treeWrapperRef = useRef<any>(null);
 
     const [ renamingNowUniqueId, setRenamingNowUniqueId ] = useState(0);
 
@@ -32,8 +32,6 @@ function Tree() {
         () => {
             const fetchList = async () => {
                 const List = await getHook();
-                console.log("List", List);
-                
                 setRowList(List);
             }
             fetchList().catch(console.error);
@@ -43,6 +41,14 @@ function Tree() {
 
     const handleStartRenameNode = (id: number) => {
         if(renamingNowUniqueId !== 0) {
+            toast.info('Сначала закончите редактирование другой строки', {
+                position: "top-center",
+                autoClose: 2000,
+                hideProgressBar: true,
+                pauseOnHover: false,
+                draggable: true,
+                theme: "colored",
+            });
             return
         }
         const targetNode = findNode(rowList, id);
@@ -58,6 +64,14 @@ function Tree() {
 
       const addVirtualNode = (parentId: number | null) => {
         if(renamingNowUniqueId !== 0) {
+            toast.info('Выйдите из режима редактирования', {
+                position: "top-center",
+                autoClose: 2000,
+                hideProgressBar: true,
+                pauseOnHover: false,
+                draggable: true,
+                theme: "colored",
+            });
             return 
         }
         setRenamingNowUniqueId(-1);
@@ -147,7 +161,6 @@ function Tree() {
             
             const isInputDisabled = renamingNowUniqueId !== node.id;
             const parent = parentId;
-            const isLast = index + 1 === tree.length;
 
             return (
                 <>
@@ -176,14 +189,6 @@ function Tree() {
                                         <div className={s.section__line + " " + s.section__line_gorizont} />
                                     </>
                                 }
-                                {/* {
-                                    isParent && node.child.length > 0 && !isLast &&
-                                    <div
-                                        className={s.section__line_continuation} 
-                                        // style={{height: `${57.5 * (getDepth(node.child) as number)}px`}}
-                                    />
-                                } */}
-                                
                             </div>
                             {hover === node.id && renamingNowUniqueId === 0 &&
                                 <button 
@@ -241,13 +246,12 @@ function Tree() {
                         />
                     </div>
                     <div className={s.parent}>
-                        {/* { node.child.length > 0 &&
+                        { node.child.length > 0 &&
                                 <div 
                                     className={s.parent__continuation}
-                                    style={{height: `${getTotalNumber(node.child) * 57}px`}}
                                 >
                                 </div>
-                        } */}
+                        }
                         
                         {node.child ? buildTree(node.child, node.child.length > 0, node.id) : null}
                     </div>
