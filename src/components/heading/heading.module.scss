@@ -1,0 +1,10 @@
+.heading {
+    display: grid;
+    grid-template-columns: 115px 1fr 207px 207px 207px 207px;
+    margin: 0 12px 12px 12px;
+    padding-top: 12px;
+    &__item {
+        padding: 12px;
+        color: rgba(255, 255, 255, 0.5);
+    }
+}

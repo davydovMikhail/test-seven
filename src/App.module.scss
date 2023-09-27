@@ -1,0 +1,83 @@
+.app {
+    color: #fff;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 48px 48px minmax(calc(100vh - 96px), auto);
+    grid-template-columns: 236px 1fr;
+    grid-template-areas: "header header"
+                         "name cap"
+                         "list tablo";
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.backgroundOne {
+    background-color: #272729;
+}
+.backgroundTwo {
+    background-color: #202125;
+}
+.borderWhite {
+    border: 0.01px solid rgba(130, 127, 127, 0.9);
+}
+.header {
+    padding-left: 15px;
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    &__img {
+        height: 20px;
+        margin: 0 10px;
+    }
+    &__text {
+        margin: 0 10px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+    &__text_active {
+        border-bottom: 2px solid rgba(255, 255, 255);;
+    }
+}
+.name {
+    grid-area: name;
+    display: flex;
+    align-items: center;
+    &__text {
+        margin-left: 15px;
+        padding-right: 15px;
+    }
+}
+.cap {
+    grid-area: cap;
+    display: flex;
+    align-items: center;
+    &__text {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        margin-left: 15px;
+        padding-right: 15px;
+        border-right: 0.01px solid rgba(130, 127, 127, 0.9);
+    }
+}
+.list {
+    grid-area: list;
+    &__item {
+        display: flex;
+        height: 35px;
+        align-items: center;
+        &_active {
+            background-color: #a1a1a9;
+        }
+    }
+    &__icon {
+        height: 22px;
+        padding-left: 19px;
+    }
+    &__text {
+        font-size: 20px;
+        padding-left: 15px;
+    }
+}
+.tablo {
+    grid-area: #202125;
+}
